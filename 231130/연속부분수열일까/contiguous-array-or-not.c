@@ -9,8 +9,10 @@ void input(int *p, int k) {
 
 
 int isSubsequence(int *x, int *y, int n, int m) {
-    int start = -1; 
-    int j = 0;      
+    
+    int start = -1;
+    
+    int j = 0;
 
     
     for (int i = 0; i < n; i++) {
@@ -25,7 +27,7 @@ int isSubsequence(int *x, int *y, int n, int m) {
         return 0;
 
     
-    for (int i = start + 1; i < n; i++) {
+    for (int i = start; i < start + m; i++) {
         if (x[i] != y[j++])
             return 0;
     }
@@ -38,6 +40,7 @@ int main() {
     int *p1, *p2;
     int result;
 
+    
     scanf("%d %d", &n, &m);
     p1 = (int *)malloc(sizeof(int) * n);
     p2 = (int *)malloc(sizeof(int) * m);
@@ -53,7 +56,7 @@ int main() {
     else
         printf("No\n");
 
-
+    
     free(p1);
     free(p2);
 
